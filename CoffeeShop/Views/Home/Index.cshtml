@@ -3,6 +3,26 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-5">Платформа</h1>
+    <h2 class="display-6">для обучения сотрудников</h2>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.info-button').click(function () {
+            $(this).next('.info-block').toggle();
+        });
+    });
+</script>
+
+@*@foreach (var lesson in Model)
+{
+    <div>
+        <h3>@lesson.Name</h3>
+        <button class="info-button">Show Info</button>
+        <div class="info-block" style="display: none;">
+            <p>@lesson.Description</p>
+        </div>
+    </div>
+}*@
