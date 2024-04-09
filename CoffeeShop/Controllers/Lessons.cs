@@ -6,7 +6,7 @@ namespace CoffeeShop.Controllers
 {
     public class Lesson : Controller
     {
-        private readonly ApplicationContext _context;
+        /*private readonly ApplicationContext _context;
 
         public Lesson(ApplicationContext context)
         {
@@ -17,6 +17,6 @@ namespace CoffeeShop.Controllers
         {
             var lessons = _context.Lesson.ToList();
             return View(lessons);
-        }
+        }*/
     }
 }
