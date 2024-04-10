@@ -28,6 +28,11 @@ body {
 .bordered-block {
     border: 1px solid black; /* Толщина, стиль и цвет границы */
     padding: 10px; /* Внутренний отступ вокруг содержимого */
+    width: 440px;
+    background-image: url("fon.jpg");
+    background-size: cover; /* масштабирует изображение так, чтобы оно полностью покрывало блок */
+    background-position: center; /* центрирует изображение */
+    background-color: rgba(11, 11, 234, 0.5);
 }
 
 .under {
