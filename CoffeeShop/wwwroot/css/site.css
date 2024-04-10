@@ -29,18 +29,26 @@ body {
     border: 1px solid black; /* Толщина, стиль и цвет границы */
     padding: 10px; /* Внутренний отступ вокруг содержимого */
     width: 440px;
-    background-image: url("fon.jpg");
-    background-size: cover; /* масштабирует изображение так, чтобы оно полностью покрывало блок */
-    background-position: center; /* центрирует изображение */
-    background-color: rgba(11, 11, 234, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .under {
     text-decoration: underline;
 }
 
-.brd {
+.brd-index {
     border: 4px double black; /* Параметры границы */
     background: #D2B48C; /* Цвет фона */
     padding: 10px; /* Поля вокруг текста */
+    margin: auto;
+    position: absolute;
+    top: 50%; /* перемещает блок на 50% высоты родительского элемента */
+    left: 50%; /* перемещает блок на 50% ширины родительского элемента */
+    transform: translate(-50%, -50%); /* смещает блок обратно на половину его ширины и высоты */
+}
+
+.brd {
+    border: 4px double black; /* ????????? ??????? */
+    background: #D2B48C; /* ???? ???? */
+    padding: 10px; /* ???? ?????? ?????? */
 }
