@@ -30,9 +30,9 @@ namespace CoffeeShop.Controllers
         }
 
         public List<Question> GetQuestionsFromDatabase()
-        {
+        {            
             List<Question> questions = new List<Question>
-        {
+        {           
             new Question
             {
                 Id = 1,
@@ -41,7 +41,7 @@ namespace CoffeeShop.Controllers
                 {
                     new Answer { Id = 1, Text = "1 столовая ложка кофе на 4 унции воды", IsCorrect = false },
                     new Answer { Id = 2, Text = "2 столовые ложки кофе на 6 унций воды", IsCorrect = true },
-                    new Answer { Id = 3, Text = "3 столовые ложки кофе на 8 унций воды", IsCorrect = false }
+                    new Answer { Id = 3, Text = "3 столовые ложки кофе на 8 унций воды", IsCorrect = false }                    
                 }
             },
             new Question
@@ -65,8 +65,8 @@ namespace CoffeeShop.Controllers
                     new Answer { Id = 8, Text = "90-96 градусов Цельсия", IsCorrect = true },
                     new Answer { Id = 9, Text = "100 градусов Цельсия", IsCorrect = false }
                 }
-            }
-        };
+            }           
+        };            
 
             return questions;
         }
@@ -82,8 +82,21 @@ namespace CoffeeShop.Controllers
         {
             // Обработка ответов пользователя
             // Подсчет правильных ответов и вывод результатов
+            List<Question> questions = GetQuestionsFromDatabase();
+            Answer answer1 = new Answer();
+            answer1.Count = 0;
+            //int correctAnswersCount = 0;
+            foreach (var answer in answers)
+            {
+                // Проверяем, правильный ли ответ
+                if (answer.IsCorrect)
+                {
+                    answer1.Count++;
+                }
+            }
+            ViewBag.Score = answer1.Count++;
 
-            return View("Result");
+            return View("Result", questions);
         }
 
         public List<Question2> GetQuestions2FromDatabase()

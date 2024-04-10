@@ -1,2 +1,17 @@
-﻿<h2>Results</h2>
-<p>Your score: @ViewBag.Score</p>
+﻿@model List<Question>
+<form method="post">
+    @foreach (var question in Model)
+        @foreach (var answer in question.Answers)
+        {
+        // Проверяем, правильный ли ответ
+            if (answer.IsCorrect)
+            {
+                ViewBag.Score++;
+            }            
+        }     
+</form>
+<h2>Results</h2>
+<p>Your score: @{
+        int score = (int)ViewBag.Score;
+        double finish = ((double)score * 100.0) / 3.0;
+    }@finish</p>
