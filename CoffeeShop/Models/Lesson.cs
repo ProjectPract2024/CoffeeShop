@@ -10,7 +10,6 @@ public class Answer
     public int Id { get; set; }
     public string Text { get; set; }
     public bool IsCorrect { get; set; }
-    public int Count { get; set; }
 }
 
 public class Question2
@@ -39,4 +38,18 @@ public class Answer3
     public int Id3 { get; set; }
     public string Text3 { get; set; }
     public bool IsCorrect3 { get; set; }
+}
+
+public class QuestionF
+{
+    public int IdF { get; set; }
+    public string TextF { get; set; }
+    public List<AnswerF> AnswersF { get; set; }
+}
+
+public class AnswerF
+{
+    public int IdF { get; set; }
+    public string TextF { get; set; }
+    public bool IsCorrectF { get; set; }
 }

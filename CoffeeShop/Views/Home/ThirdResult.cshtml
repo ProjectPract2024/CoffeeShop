@@ -1,0 +1,16 @@
+﻿@model int
+
+<h2>Итог:</h2>
+<div class="bordered-block">
+    Ваш результат: @{
+        int score = Model;
+        double finish = (score * 100.0) / 3.0;
+        <h5>@(finish + 2.0 / 3.0 * 100)</h5>
+    }
+</div>
+
+<div class="brd-index">
+    <form method="post" asp-controller="Home" asp-action="FinishTest">
+        <button type="submit">Перейти к итоговому тесту</button>
+    </form>
+</div>

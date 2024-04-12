@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Итоговый Тест";
+}
+<h2>@ViewData["Title"]</h2>
+<br>
+
+<div class="brd">
+@model List<QuestionF>
+
+    <form method="post" action="/Home/FinishResult">
+        @foreach (var questionf in Model)
+        {
+           <h5>@questionf.TextF</h5>
+           @foreach (var answerf in questionf.AnswersF)
+           {
+               <input type="radio" name="answersf[@questionf.IdF]" value="@answerf.IdF">
+
+                @answerf.TextF
+
+                <br>
+           }
+           <br>
+        }
+        <button type="submit">Отправить</button>
+    </form>
+</div>
